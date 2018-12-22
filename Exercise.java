@@ -1,17 +1,14 @@
 
 public class Exercise {
-	//Fields
+
 	private String name;
 	private double max;
-
-
 
 	//Constructor
 	public Exercise(String name, double max) {
 		this.name = name;
 		this.max = max;
 	}
-
 
 	//Setters
 	public void setName(String name) {
@@ -41,7 +38,7 @@ public class Exercise {
 	* @param mult the percentage of the max the user must lift
 	*@return the weight to lift rounded to the nearest increment of 2.5
 	*/
-	public int getRoundedNum(double mult){
+	public double getRoundedNum(double mult){
 		double x = this.max * mult;
 		return Math.round(x/2.5) * 2.5;
 	}

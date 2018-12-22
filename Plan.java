@@ -1,14 +1,16 @@
+import java.util.Scanner;
 
 public abstract class Plan {
 
-	//public abstract void display();
+	private Scanner sc = new Scanner(System.in);
 
 	public abstract void save();
 
-	//have this here
 	public abstract void create();
 
-	public void addExercise() {
+	public abstract void printPlan();
+
+	public Exercise addExercise() {
 		String name;
 		double max;
 
@@ -21,23 +23,12 @@ public abstract class Plan {
 		return new Exercise(name, max);
 	}
 
-	public void printPlan(String[] headers, double[] mults, Exercise[] cluster){
-		for (int i = 0; i < headers.length; ++i) {
-			System.out.println("\n" + headers[i]);
-			for (int j = 0; j < cluster.length; ++j) {
-				//double x = cluster[j].getRoundedNum(mults[i]);
-				//System.out.println(cluster[j].getName() + " - " + cluster[j].getMax() * mults[i]);
-				System.out.println(cluster[j].getName() + " - "
-				+ cluster[j].getRoundedNum(mults[i]);)
-			}
-		}
-	}
-
 	public void printExercises(Exercise[] cluster){
 		System.out.println("Your exercises for this plan are:");
 		for (Exercise exc: cluster){
 			System.out.println(exc.getName() + " - Max: " + exc.getMax());
 		}
 	}
+
 
 }
